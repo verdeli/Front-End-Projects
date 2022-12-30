@@ -6,14 +6,14 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
-export function Post({ author, content }){
+export function Post({ author, content, publishAt }){
     const [ comments, setComments ] = useState([
       'Post muito bacana ein!'
     ]);
 
     const [newCommentText, setNewCommentText] = useState('');
 
-    const pushedDateFormatted = format(publishAt, "d 'de' LLLL 'ás' HH:mm'h",{
+    const pushedDateFormatted = format(publishAt, "d 'de' LLLL 'ás' HH:mm'h", {
         locale: ptBR,
     });
 
@@ -37,8 +37,8 @@ export function Post({ author, content }){
     }
 
     function deleteComment(commentToDelete){
-        const commentsWithoutDeletedOne = comments.filter(comment =>{
-            return comment ==! commentToDelete;
+        const commentsWithoutDeletedOne = comments.filter(comment => {
+            return comment !== commentToDelete;
         });
 
         setComments(commentsWithoutDeletedOne);
@@ -59,8 +59,9 @@ export function Post({ author, content }){
                         <p>{author.role}</p>
                 </div>
                 </div>
-                <time title={ pushedDateFormatted }> dateTime={publishAt.toISOString()} </time>
-                { publishedDateRelativeToNow }
+                <time title = { pushedDateFormatted } dateTime = { publishAt.toISOString() }> 
+                    { publishedDateRelativeToNow }
+                </time>
             </header>
 
             <div className={styles.content}>

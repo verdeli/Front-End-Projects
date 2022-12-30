@@ -1,11 +1,11 @@
 .post {
-    background: var(--gray--800);
+    background: var(--gray-800);
     border-radius: 8px;
     padding: 2.5rem;
 }
 
-.post + .post {
-margin-top: 2rem;
+.post+.post {
+    margin-top: 2rem;
 }
 
 .content {
@@ -25,18 +25,18 @@ margin-top: 2rem;
 }
 
 .content a:houver {
-    color: var(--green-300);  
+    color: var(--green-300);
 }
 
-.post > header {
+.post>header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.post > header time {
+.post>header time {
     font-size: 0.875rem;
-    color: var(--gray--400);
+    color: var(--gray-400);
 }
 
 .author {
@@ -65,7 +65,7 @@ margin-top: 2rem;
     border-top: 1px solid var(--gray-600);
 }
 
-.commentForm > strong {
+.commentForm>strong {
     line-height: 1.6;
     color: var(--gray-100);
 }
@@ -103,10 +103,10 @@ margin-top: 2rem;
     color: var(--white);
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.1s; 
-} 
+    transition: background-color 0.1s;
+}
 
-.commentForm button[type=submit]:not(:disabled):houver{
+.commentForm button[type=submit]:not(:disabled):houver {
     background: var(--green-300);
 }
 

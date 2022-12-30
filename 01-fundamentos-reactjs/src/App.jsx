@@ -17,8 +17,7 @@ const posts = [
     content: [ 
      {type: 'paragraph', content: 'Fala galeraaaaa 👋'},
      {type: 'paragraph', content: 'Acabei de subir para o meu profile. È um projeto que eu fiz no WLW Return, evento super massa.' },
-     {type: 'paragraph', link: 'jane.design/doctorcare'},
-     {type: 'paragraph', link: '#novoprojeto #nlx #rocketseat'}
+     {type: 'link', content: 'jane.design/doctorcare'},
   ],
   publishAt: new Date('2022-05-03 22:32:25 ')
   },
@@ -30,10 +29,9 @@ const posts = [
       role: 'Web Developer'
     },
     content: [ 
-     {type: 'paragraph', content: 'Fala galeraaaaa 👋'},
-     {type: 'paragraph', content: 'Acabei de subir para o meu profile. È um projeto que eu fiz no WLW Return, evento super massa.' },
-     {type: 'paragraph', link: 'jane.design/doctorcare'},
-     {type: 'paragraph', link: '#novoprojeto #nlx #rocketseat'}
+     {type: 'paragraph', content: 'Opa!'},
+     {type: 'paragraph', content: 'Sou revolucionário, quase anarquista!.' },
+     {type: 'link', content: 'jane.design/'},
   ],
   publishAt: new Date('2022-12-30 22:40:25 ')
   },
