@@ -6,7 +6,7 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
-export function Post({ author, content, publishAt }){
+export function Post({ author, content, publishAt }) {
     const [ comments, setComments ] = useState([
       'Post muito bacana ein!'
     ]);
