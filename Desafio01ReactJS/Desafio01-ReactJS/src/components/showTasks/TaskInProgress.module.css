@@ -1,0 +1,26 @@
+.taskInProgress {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gray-100);
+  margin: 4rem 0 1.5rem 0;
+}
+
+.createdTask strong {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.doneTask strong {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.createdTask span, .doneTask span {
+  color: var(--gray-200);
+  background: var(--gray-400);
+  padding: 2px 8px;
+  border-radius: 50%;
+}
+
