@@ -15,13 +15,8 @@ export function App() {
       <div className={styles.wrapper}>
         <NewTask />
         <TaskInProgress />
-        <TodoEmpty />
-        {/* <Todo />
+        {/* <TodoEmpty /> */}
         <Todo />
-        <Todo />
-        <Todo />
-        <Todo />
-        <Todo /> */}
       </div>
     </div>
   )

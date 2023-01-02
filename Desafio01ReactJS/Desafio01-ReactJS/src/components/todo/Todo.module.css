@@ -18,8 +18,19 @@
   color: var(--gray-300);
   border: none;
   background: none;
+  padding: .25rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
+.todo input {
+  cursor: pointer;
+}
 .todo+.todo {
   margin-top: 0.75rem;
+}
+
+.todo button:hover {
+  color: var(--danger);
+  background: var(--gray-400);
 }

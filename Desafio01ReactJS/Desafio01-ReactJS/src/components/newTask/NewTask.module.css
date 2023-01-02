@@ -26,6 +26,12 @@
   border: none;
   font-size: 0.875rem;
   color: var(--gray-100);
+  transition: background 0.14s;
+}
+
+.newTaskForm button[type="submit"]:hover {
+  background: var(--blue);
+  cursor: pointer;
 }
 
 .containerButton {
