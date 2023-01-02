@@ -1,0 +1,25 @@
+.todo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--gray-500);
+  border-radius: 8px;
+  height: 4.5rem;
+  border: solid 1px var(--gray-400);
+  padding: 1rem;
+}
+
+.todo p {
+  color: var(--gray-300);
+}
+
+.todo button {
+  color: var(--gray-300);
+  border: none;
+  background: none;
+}
+
+.todo+.todo {
+  margin-top: 0.75rem;
+}
