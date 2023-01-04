@@ -12,6 +12,7 @@
 
 .todo p {
   color: var(--gray-300);
+  flex: 1;
 }
 
 .todo button {
@@ -26,6 +27,7 @@
 .todo input {
   cursor: pointer;
 }
+
 .todo+.todo {
   margin-top: 0.75rem;
 }

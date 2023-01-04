@@ -1,11 +1,19 @@
 import styles from '../newTask/NewTask.module.css';
 import { PlusCircle } from 'phosphor-react';
+import { FormEvent } from 'react';
 
-export function NewTask() {
+interface NewTaskProps {
+  handleCreateNewTask: (e: FormEvent) => void,
+}
+
+export function NewTask({ handleCreateNewTask }: NewTaskProps) {
+
   return (
-    <form className={styles.newTaskForm}>
+    <form className={styles.newTaskForm} onSubmit={handleCreateNewTask}>
       <input placeholder="Adicione uma nova tarefa"
-        type="text" />
+        type="text"
+        required
+      />
       <button type="submit">
         <div className={styles.containerButton}>
           Criar
