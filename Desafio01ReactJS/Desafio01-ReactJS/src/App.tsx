@@ -6,7 +6,7 @@ import { NewTask } from '/Users/verde/RocketSeat/Vite/Desafio01ReactJS/Desafio01
 import { TaskInProgress } from './components/showTasks/TaskInProgress';
 import { TodoEmpty } from './components/todoEmpty/TodoEmpty';
 import { Todo } from './components/todo/Todo';
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 interface Task {
@@ -18,15 +18,15 @@ interface Task {
 export function App() {
 
   const [todos, setTodos] = useState<Task[]>([]);
+  const [taskDescription, setTaskDescription] = useState('');
 
   function handleCreateNewTask(e: FormEvent) {
     e.preventDefault();
     const newTask = {
       id: uuidv4(),
-      description: "Aprendendo ...",
+      description: taskDescription,
       isCompleted: false,
     };
-    console.log(newTask);
     setTodos([...todos, newTask]);
   }
 
@@ -39,11 +39,15 @@ export function App() {
     setTodos(task);
   }
 
+  function handleNewTaskDescription(event: ChangeEvent<HTMLInputElement>) {
+    setTaskDescription(event.target.value);
+  }
+
   return (
     <div>
       <Header />
       <div className={styles.wrapper}>
-        <NewTask handleCreateNewTask={handleCreateNewTask} />
+        <NewTask handleCreateNewTask={handleCreateNewTask} handleNewTaskDescription={handleNewTaskDescription} />
         <TaskInProgress todos={todos} />
 
         {
