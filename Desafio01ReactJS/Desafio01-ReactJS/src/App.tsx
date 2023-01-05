@@ -20,6 +20,7 @@ export function App() {
   const [todos, setTodos] = useState<Task[]>([]);
   const [taskDescription, setTaskDescription] = useState('');
 
+
   function handleCreateNewTask(e: FormEvent) {
     e.preventDefault();
     const newTask = {
@@ -28,6 +29,7 @@ export function App() {
       isCompleted: false,
     };
     setTodos([...todos, newTask]);
+    setTaskDescription('');
   }
 
   function handleDeleteTask(id: string) {
@@ -47,7 +49,11 @@ export function App() {
     <div>
       <Header />
       <div className={styles.wrapper}>
-        <NewTask handleCreateNewTask={handleCreateNewTask} handleNewTaskDescription={handleNewTaskDescription} />
+        <NewTask
+          handleCreateNewTask={handleCreateNewTask}
+          handleNewTaskDescription={handleNewTaskDescription}
+          taskDescription={taskDescription}
+        />
         <TaskInProgress todos={todos} />
 
         {

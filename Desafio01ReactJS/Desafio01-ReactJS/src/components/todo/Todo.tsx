@@ -16,8 +16,14 @@ interface ToDoProps {
 
 export function Todo({ todos, handleDeleteTask, onUpdateTask }: ToDoProps) {
 
-  function updateTask(id: string) {
-   
+  function handleCheckTask(id: string) {
+    const taskUpdated = todos.reduce((acumulador: Task[], atual) => {
+      if (atual.id === id) {
+        return [...acumulador, { ...atual, isCompleted: !atual.isCompleted }]
+      }
+      return [...acumulador, atual];
+    }, []);
+    onUpdateTask(taskUpdated);
   }
 
   return (
@@ -26,7 +32,7 @@ export function Todo({ todos, handleDeleteTask, onUpdateTask }: ToDoProps) {
         todos.map(element => {
           return (
             <main key={element.id} className={styles.todo}>
-              <input type="checkbox" onChange={() => updateTask(element.id)} />
+              <input type="checkbox" checked={element.isCompleted} onChange={() => handleCheckTask(element.id)} />
               <p>{element.description}</p>
               <button onClick={() => handleDeleteTask(element.id)} >
                 <Trash size={14} />

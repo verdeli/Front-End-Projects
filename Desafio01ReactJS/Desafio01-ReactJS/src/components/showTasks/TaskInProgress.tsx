@@ -4,6 +4,7 @@ import styles from '../showTasks/TaskInProgress.module.css';
 interface Task {
   id: string;
   description: string;
+  isCompleted: boolean;
 }
 
 interface TaskInProgressProps {
@@ -11,6 +12,7 @@ interface TaskInProgressProps {
 }
 
 export function TaskInProgress({ todos }: TaskInProgressProps) {
+  const taskDone = todos.filter(element => element.isCompleted === true).length;
   return (
     <div className={styles.taskInProgress}>
       <div className={styles.createdTask}>
@@ -19,7 +21,7 @@ export function TaskInProgress({ todos }: TaskInProgressProps) {
       </div>
       <div className={styles.doneTask}>
         <strong>Concluídas </strong>
-        <span>0 de {todos.length}</span>
+        <span>{taskDone} de {todos.length}</span>
       </div>
     </div>
   );

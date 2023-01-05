@@ -28,6 +28,10 @@
   cursor: pointer;
 }
 
+.todo input[type="checkbox"]:checked+p {
+  text-decoration: line-through;
+}
+
 .todo+.todo {
   margin-top: 0.75rem;
 }
