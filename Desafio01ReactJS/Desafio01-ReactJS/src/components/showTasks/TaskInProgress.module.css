@@ -17,10 +17,17 @@
   font-size: 0.875rem;
 }
 
-.createdTask span, .doneTask span {
+.createdTask span,
+.doneTask span {
   color: var(--gray-200);
   background: var(--gray-400);
-  padding: 2px 8px;
   border-radius: 50%;
 }
 
+.createdTask span {
+  padding: 0.125rem 0.5rem;
+}
+
+.doneTask span {
+  padding: 0.125rem 0.5rem;
+}
